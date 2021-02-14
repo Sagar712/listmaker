@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>List Maker</title>
 
-    <link rel="stylesheet" href="./Hangman.css">
+    <link rel="stylesheet" type="text/css" href="Hangman.css">
 </head>
 
 <body>
@@ -22,12 +22,16 @@
 
 
             <div class="inp">
-                <input type="text" placeholder="add Item" id="name">
-                <input type="text" placeholder="Quantity" id="quant">
-                <input type="text" placeholder="price/kg,gm" id="price">
+                <input type="text" placeholder="add Item" autocomplete="off" id="name">
+                <input type="text" placeholder="Quantity" autocomplete="off" id="quant">
+                <input type="text" placeholder="price/kg,gm" autocomplete="off" id="price">
 
             </div>
-            <button onclick="addval()" id="addbtn">Add</button>
+            <div>
+                <button onclick="resetval()" id="addbtn">Reset</button>
+                <button onclick="addval()" id="addbtn">Add</button>
+            </div>
+            
 
             <table id="allcell">
                 
@@ -39,7 +43,7 @@
     </div>
 
 
-    <script src="./app.js"></script>
+    <script src="app.js"></script>
 </body>
 
 </html>
