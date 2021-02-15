@@ -123,7 +123,7 @@ function inputData(){
 	fullstr = fullstr.concat("\n"+inpu);
 	localStorage.setItem("111",fullstr);
 	console.log(fullstr);
-	outp.innerHTML=fullstr;
+	outp.innerTEXT=fullstr;
 
 }
 
