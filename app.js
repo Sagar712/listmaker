@@ -109,7 +109,7 @@ function storageo(){
 function inputData(){
 	let fullstr="";
 	let inpu = document.getElementById("namedata").value;
-	let outp = document.getElementById("outp");
+	let outp = document.getElementById("indat");
 	console.log(inpu);
 	if(localStorage.getItem("111")!=null){
 		fullstr = localStorage.getItem("111");
