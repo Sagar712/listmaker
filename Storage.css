@@ -1,0 +1,7 @@
+.storage{
+    display: flex;
+}
+.allbtns{
+    display: flex;
+    flex-direction: column;
+}

@@ -26,7 +26,7 @@ function addval(){
 	for(let j=0; j<names.length; j++){
 		str += `<tr><td>${j+1}</td><td>${names[j]}</td><td>${quants[j]}</td><td>${prices[j]}</td><td><button onclick = "handler(this.id)"class="clos" id="${j+1}">X</button></td></tr>`;
 	}
-	celldata.innerHTML = str;
+	celldata.innerHTML = totalcalc(str);
 
 }
 
@@ -65,7 +65,8 @@ function handler(id){
 	for(let j=0; j<names.length; j++){
 		str += `<tr><td>${j+1}</td><td>${names[j]}</td><td>${quants[j]}</td><td>${prices[j]}</td><td><button onclick = "handler(this.id)"class="clos" id="${j+1}">X</button></td></tr>`;
 	}
-	celldata.innerHTML = str;
+	
+	celldata.innerHTML = totalcalc(str);
 }
 
 function resetval(){
@@ -77,3 +78,55 @@ function resetval(){
 	
 }
 
+function totalcalc(str){
+	let tot = document.getElementById("totals");
+	let total=0;
+	let j;
+	console.log("quant: "+quants+", prices: "+prices);
+	for(j=0; j<names.length; j++){
+
+		if(quants[j]==""){
+			total += parseInt(prices[j]) ;
+		}
+			
+		else if(prices[j]=="")
+			total += parseInt(quants[j]);
+		else if(prices[j]=="" && quants[j]=="");
+		else
+		total += quants[j]*prices[j];
+	}
+	str += `<tr><td>#</td><td></td><td colspan ="2">Total:${total}</td><td>~</td></tr>`;
+	
+
+	return str;
+
+}
+
+function storageo(){
+	window.location.href="./Storagecontrol.html";
+}
+
+function inputData(){
+	let fullstr="";
+	let inpu = document.getElementById("namedata").value;
+	let outp = document.getElementById("outp");
+	console.log(inpu);
+	if(localStorage.getItem("111")!=null){
+		fullstr = localStorage.getItem("111");
+	}
+	else{
+		localStorage.setItem("111","");
+		fullstr = localStorage.getItem("111");
+	}
+
+	
+	fullstr = fullstr.concat("\n"+inpu);
+	localStorage.setItem("111",fullstr);
+	console.log(fullstr);
+	outp.innerHTML=fullstr;
+
+}
+
+function deleteData(){
+	localStorage.removeItem("111");
+}
