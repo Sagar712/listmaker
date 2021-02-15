@@ -111,24 +111,24 @@ function inputData(){
 	let inpu = document.getElementById("namedata").value;
 	
 	
-	if(localStorage.getItem("111")!=null){
+	if(localStorage.getItem("112")!=null){
 
-		fullstr = localStorage.getItem("111");
+		fullstr = localStorage.getItem("112");
 	}
 	else{
-		localStorage.setItem("111","");
-		fullstr = localStorage.getItem("111");
+		localStorage.setItem("112","");
+		fullstr = localStorage.getItem("112");
 	}
 	
 	if(inpu!="")
 		fullstr = fullstr.concat("\n"+inpu);
-	localStorage.setItem("111",fullstr);
+	localStorage.setItem("112",fullstr);
 	console.log(fullstr);
 	document.getElementById("outpara").innerText=fullstr;
 
 }
 
 function deleteData(){
-	localStorage.removeItem("111");
+	localStorage.removeItem("112");
 	document.getElementById("outpara").innerText="";
 }
