@@ -95,7 +95,7 @@ function totalcalc(str){
 		else
 		total += quants[j]*prices[j];
 	}
-	str += `<tr><td>#</td><td></td><td colspan ="2">Total:${total}</td><td>~</td></tr>`;
+	str += `<tr><td>#</td><td></td><td colspan ="2"><b>Total: ${total}</b></td><td>~</td></tr>`;
 	
 
 	return str;
