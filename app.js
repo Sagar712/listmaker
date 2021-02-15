@@ -109,24 +109,26 @@ function storageo(){
 function inputData(){
 	let fullstr="";
 	let inpu = document.getElementById("namedata").value;
-	let outp = document.getElementById("indat");
-	console.log(inpu);
+	
+	
 	if(localStorage.getItem("111")!=null){
+
 		fullstr = localStorage.getItem("111");
 	}
 	else{
 		localStorage.setItem("111","");
 		fullstr = localStorage.getItem("111");
 	}
-
 	
-	fullstr = fullstr.concat("\n"+inpu);
+	if(inpu!="")
+		fullstr = fullstr.concat("\n"+inpu);
 	localStorage.setItem("111",fullstr);
 	console.log(fullstr);
-	outp.innerText=fullstr;
+	document.getElementById("outpara").innerText=fullstr;
 
 }
 
 function deleteData(){
 	localStorage.removeItem("111");
+	document.getElementById("outpara").innerText="";
 }
