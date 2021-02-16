@@ -9,10 +9,10 @@ function addval(){
 	console.log("clicked");
 	let str=`<tr>
 	<th>Sr.</th>
-	<th>Item Name</th>
+	<th>Name</th>
 	<th>Quatity</th>
-	<th>Price</th>
-	<th>Remove</th>
+	<th>₹ Price</th>
+	<th>Remv</th>
 </tr>`;
 	let name = document.getElementById("name").value;
 	let quant = document.getElementById("quant").value;
