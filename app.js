@@ -36,10 +36,10 @@ function handler(id){
 	console.log("X clicked:"+id);
 	let str=`<tr>
 	<th>Sr.</th>
-	<th>Item Name</th>
+	<th>Name</th>
 	<th>Quatity</th>
-	<th>Price</th>
-	<th>Remove</th>
+	<th>₹ Price</th>
+	<th>Remv</th>
 </tr>`;
 	let tempname =[];
 	let tempquant =[];
