@@ -1,40 +1,6 @@
 
 
-function swipeleft1(){
-    document.getElementById("content1").style.transform="translateX(0%)";
-    document.getElementById("content2").style.transform="translateX(100%)";
-    document.getElementById("content3").style.transform="translateX(200%)";
-    document.querySelectorAll("#icon1")[0].style.color="rgb(65, 47, 0)";
-    document.querySelectorAll("#icon1")[1].style.color="rgb(65, 47, 0)";
-    document.querySelectorAll("#icon2")[0].style.color="rgb(148, 108, 0)";
-    document.querySelectorAll("#icon2")[1].style.color="rgb(148, 108, 0)";
-    document.getElementById("icon3").style.color="rgb(148, 108, 0)";
-    document.getElementById("allcont").scrollTop=0;
-}
 
-function swipeleft2(){
-    document.getElementById("content1").style.transform="translateX(-100%)";
-    document.getElementById("content2").style.transform="translateX(0%)";
-    document.getElementById("content3").style.transform="translateX(100%)";
-    document.querySelectorAll("#icon2")[0].style.color="rgb(65, 47, 0)";
-    document.querySelectorAll("#icon2")[1].style.color="rgb(65, 47, 0)";
-    document.querySelectorAll("#icon1")[0].style.color="rgb(148, 108, 0)";
-    document.querySelectorAll("#icon1")[1].style.color="rgb(148, 108, 0)";
-    document.getElementById("icon3").style.color="rgb(148, 108, 0)";
-    document.getElementById("allcont").scrollTop=0;
-}
-
-function swipeleft3(){
-    document.getElementById("content1").style.transform="translateX(-200%)";
-    document.getElementById("content2").style.transform="translateX(-100%)";
-    document.getElementById("content3").style.transform="translateX(0%)";
-    document.getElementById("icon3").style.color="rgb(65, 47, 0)";
-    document.querySelectorAll("#icon2")[0].style.color="rgb(148, 108, 0)";
-    document.querySelectorAll("#icon2")[1].style.color="rgb(148, 108, 0)";
-    document.querySelectorAll("#icon1")[0].style.color="rgb(148, 108, 0)";
-    document.querySelectorAll("#icon1")[1].style.color="rgb(148, 108, 0)";
-    document.getElementById("allcont").scrollTop=0;
-}
 
 let chngeicn=0;
 const overlay = document.querySelector(".ovelay2");
@@ -210,16 +176,16 @@ function addval(){
 	
 	
 
-    if(localStorage.getItem("ListTableData") == null){
+    if(localStorage.getItem("ListTableDataSolo") == null){
         const masterdb = {
             items : {
                 
             }
         }
-        localStorage.setItem("ListTableData", JSON.stringify(masterdb));
+        localStorage.setItem("ListTableDataSolo", JSON.stringify(masterdb));
     }
     
-    let masterDb = JSON.parse(localStorage.getItem("ListTableData"));
+    let masterDb = JSON.parse(localStorage.getItem("ListTableDataSolo"));
     let j =1;
     let i=0;
     
@@ -242,10 +208,10 @@ function addval(){
     }
     console.log(masterDb);
     console.log(j);
-    localStorage.setItem("ListTableData", JSON.stringify(masterDb));
+    localStorage.setItem("ListTableDataSolo", JSON.stringify(masterDb));
     
 
-    let newDb = JSON.parse(localStorage.getItem("ListTableData"));
+    let newDb = JSON.parse(localStorage.getItem("ListTableDataSolo"));
 	
 	for(let k=1; k<j; k++){
 		str += `<tr><td>${k}</td><td>${newDb.items[k].name}</td>
@@ -270,7 +236,7 @@ function handler(id){
 	    <th>Remv</th>
     </tr>`;
 	
-    let masterDb = JSON.parse(localStorage.getItem("ListTableData"));
+    let masterDb = JSON.parse(localStorage.getItem("ListTableDataSolo"));
     let j =1;
     let i=0;
     let cp = 1;
@@ -292,10 +258,10 @@ function handler(id){
         copyDb.items[cp++] = masterDb.items[j];
         j++;
     }
-    localStorage.setItem("ListTableData", JSON.stringify(copyDb));
+    localStorage.setItem("ListTableDataSolo", JSON.stringify(copyDb));
     
 
-    let newDb = JSON.parse(localStorage.getItem("ListTableData"));
+    let newDb = JSON.parse(localStorage.getItem("ListTableDataSolo"));
     console.log(newDb);
 	j=j-1;
 	for(let k=1; k<j; k++){
@@ -309,7 +275,7 @@ function handler(id){
 
 function deleteList() {
     if(confirm("You are about to delete complete list\n Are you sure?")){
-        localStorage.removeItem("ListTableData");
+        localStorage.removeItem("ListTableDataSolo");
     }
     else{
         alert("Deletion aborted !");
@@ -476,12 +442,12 @@ function listRendrer() {
 	    <th>Remv</th>
     </tr>`;
 	
-    if(localStorage.getItem("ListTableData") == null){
+    if(localStorage.getItem("ListTableDataSolo") == null){
         celldata.innerHTML = "";
         return;
     }
     
-    let masterDb = JSON.parse(localStorage.getItem("ListTableData"));
+    let masterDb = JSON.parse(localStorage.getItem("ListTableDataSolo"));
     let j =1;
     let i=0;
     while(masterDb.items[j]!=null){
@@ -492,7 +458,7 @@ function listRendrer() {
     }
     
 
-    let newDb = JSON.parse(localStorage.getItem("ListTableData"));
+    let newDb = JSON.parse(localStorage.getItem("ListTableDataSolo"));
 	
 	for(let k=1; k<j; k++){
 		str += `<tr><td>${k}</td><td>${newDb.items[k].name}</td>
