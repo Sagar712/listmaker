@@ -603,7 +603,7 @@ footer{
         margin-bottom: 0.9rem;
     }
     .menuitems button:active{
-        background-color: rgb(97, 52, 0);
+        background-color: rgb(33, 66, 52);
     }
     .backBtn{
         display: none;
